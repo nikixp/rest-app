@@ -1,5 +1,6 @@
 package com.example.rest;
 
+import com.example.object.Person;
 import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

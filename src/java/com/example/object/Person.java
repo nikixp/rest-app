@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.example.object;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class Person {
-    
+
     private int age;
     private String firstName;
     private String lastName;
@@ -45,4 +45,10 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return "Person is :" + firstName + " " + lastName + ". Age: " + age;
+    }
+
 }
