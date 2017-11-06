@@ -17,7 +17,7 @@ public class ServiceResource {
 
     @GET
     @Path("getperson/{age}/{firstname}/{lastname}")
-    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_XML})
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Person getPerson(
             @PathParam(value = "age") int age, 
             @PathParam(value = "firstname") String firstname, 

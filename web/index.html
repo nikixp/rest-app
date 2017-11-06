@@ -9,8 +9,29 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <form>
+            <label>Age: <input type="number" id="age" value="0"></label><br>
+            <label>First name: <input type="text" id="firstname" ></label><br>
+            <label>Last name: <input type="text" id="lastname"></label><br>
+        </form>
+        <input type="submit" onclick="request()"><br>
+        <div id="result"></div>
+        <script>
+            function request() {
+                var request = '/rest-app/webresources/service/getperson/'
+                        + $('#age').val() + '/' + $('#firstname').val() + '/' + $('#lastname').val();
+                $.ajax({
+                    type: 'GET',
+                    url: request,
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#result').append(JSON.stringify(data));
+                    }
+                });
+            };
+        </script>
     </body>
 </html>
